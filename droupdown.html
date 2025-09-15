@@ -22,6 +22,31 @@
     .dropdown-toggle::after{
         display: none!important;
     }
+
+    .swiper-stats {
+    width: 100%;
+  }
+
+  .swiper-stats .swiper-slide {
+    width: auto;
+    max-width: 75px;
+    margin-right: 10px;
+  }
+
+  .s1-bg-color {
+    background-color: #3498db;
+  }
+
+  .s2-bg-color {
+    background-color: #2ecc71;
+  }
+
+  .swiper-slide > div {
+    min-width: 60px;
+  }
+  .dropdown-menu{
+    width:230px!important;
+  }
 </style>
 </head>
 
@@ -144,21 +169,46 @@
       </li>
       <li><hr class="dropdown-divider"></li>
       <li>
-        <div class="d-flex text-center ">
-            <div class="s1-bg-color p-2 m-2 rounded">
-                <h5 class="text-white">14</h5>
-                <p class="text-white">Pending</p>
-            </div>
-             <div class="s2-bg-color   p-2 m-2 rounded">
-                <h5 class="text-white">05</h5>
-                <p class="text-white">Active</p>
-            </div>
-             <div class="bg-danger  p-2 m-2 rounded">
-                <h5 class="text-white">22</h5>
-                <p class="text-white">Rejected</p>
-            </div>
+        
+  <div class="swiper swiper-stats  mx-auto">
+    <div class="swiper-wrapper  ">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="s1-bg-color p-2 rounded text-center">
+          <h5 class="text-white mb-0">14</h5>
+          <p class="text-white mb-0">Pending</p>
         </div>
-      </li>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="s2-bg-color p-2 rounded text-center">
+          <h5 class="text-white mb-0">05</h5>
+          <p class="text-white mb-0">Active</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="bg-danger p-2 rounded text-center">
+          <h5 class="text-white mb-0">22</h5>
+          <p class="text-white mb-0">Rejected</p>
+        </div>
+      </div>
+
+       <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <div class="s2-bg-color p-2 rounded text-center">
+          <h5 class="text-white mb-0">05</h5>
+          <p class="text-white mb-0">Active</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</li>
+
 
       <li><hr class="dropdown-divider"></li>
 
@@ -218,22 +268,7 @@
   </div>
 
 
-  <!-- JavaScript for Toggle -->
-  <script>
-    const toggleBtn = document.getElementById('profileToggle');
-    const dropdown = document.getElementById('profileDropdown');
-
-    toggleBtn.addEventListener('click', () => {
-      dropdown.classList.toggle('show');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!toggleBtn.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.classList.remove('show');
-      }
-    });
-  </script>
+  
 
                             <!--  -->
 
@@ -2094,7 +2129,13 @@
     <script src="https://softivuslab.com/html/couponly/main/assets/js/plugins/plugins.js"></script>
     <script src="https://softivuslab.com/html/couponly/main/assets/js/plugins/plugin-custom.js"></script>
     <script src="https://softivuslab.com/html/couponly/main/assets/js/main.js"></script>
-
+<script>
+  const swiperStats = new Swiper('.swiper-stats', {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    freeMode: true,
+  });
+</script>
 </body>
 
 </html>
